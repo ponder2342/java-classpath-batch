@@ -12,7 +12,7 @@ IF EXIST classdest (
 
 :: Add all external JARs to our classpath if there is something in the lib folder
 :: Got the first line from there: http://bit.ly/2eezcsG
->nul 2>nul dir /a-d /s "folderName\*" && FOR /f "tokens=*" %%a IN ('dir /b /s .\lib\*.jar') DO CALL :concat_cpath %%a
+>nul 2>nul dir /a-d /s "lib\*" && FOR /f "tokens=*" %%a IN ('dir /b /s .\lib\*.jar') DO CALL :concat_cpath %%a
 
 :: Read in additional class- and sourcepaths from file
 IF EXIST classpath (
